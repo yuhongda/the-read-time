@@ -8,10 +8,15 @@ const Container = styled.div`
 `
 
 export const Example: React.FC = () => {
+  const [count, setCount] = useState(0)
 
   return (
     <Container>
-      <TheReadTime />
+      <TheReadTime>
+        The Article <strong>blablabla...</strong> ha-ha!! 
+        <div>{count}</div>
+        <button onClick={() => setCount(count + 1)}>+1</button>
+      </TheReadTime>
     </Container>
   )
 }

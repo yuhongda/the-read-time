@@ -1,13 +1,25 @@
-import React, { useState } from 'react'
+import React from 'react'
 import s from './style.module.scss'
+import type { TheReadTimeProps } from './types'
+import wordCount from './wordCount'
+import extractTextFromReactNode from './extractTextFromReactNode'
 
-export const TheReadTime: React.FC = (props) => {
-  const [count, setCount] = useState(0)
+export const TheReadTime: React.FC<TheReadTimeProps> = (props) => {
+  const { minuteIcon = '🍣', fiveMinutesIcon = '🍔', quarterIcon = '🍱' } = props
+
+  const text = extractTextFromReactNode(props.children)
+  console.log(text)
+  const count = wordCount(text)
+  console.log(count)
 
   return (
     <div className={s.container}>
-      <h2>{count}</h2>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <div>
+        {minuteIcon}
+        {fiveMinutesIcon}
+        {quarterIcon}
+      </div>
+      {props.children}
     </div>
   )
 }
