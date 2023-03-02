@@ -3,9 +3,8 @@ import s from './style.module.scss'
 import type { TheReadTimeProps } from './types'
 import wordCount from './wordCount'
 import extractTextFromReactNode from './extractTextFromReactNode'
-import { DEFAULT_BASE, DEFAULT_READ_SPEED, DEFAULT_STEPS } from './misc'
+import { DEFAULT_READ_SPEED, DEFAULT_STEPS } from './misc'
 import convertTimeToEmoji from './convertTimeToEmoji'
-import { formatDuration, intervalToDuration } from 'date-fns'
 import convertNumberToTime from './convertNumberToTime'
 
 export const TheReadTime: React.FC<TheReadTimeProps> = (props) => {

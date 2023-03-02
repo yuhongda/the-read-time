@@ -1,11 +1,5 @@
 import type { Step } from "./types"
 
-/**
- * in seconds
- */
-export const DEFAULT_BASE = 60
-
-
 export const DEFAULT_STEPS: Step[] = [
   {
     icon: '🍣',

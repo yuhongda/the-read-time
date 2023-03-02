@@ -1,7 +1,7 @@
 {
   "name": "the-read-time",
   "version": "0.0.1",
-  "description": "",
+  "description": "Show the read time in Emoji",
   "main": "lib/index.js",
   "module": "lib/es/index.es.js",
   "unpkg": "lib/umd/index.min.js",
