@@ -102,6 +102,7 @@ importers:
       '@vitest/ui': ^0.28.4
       happy-dom: ^8.2.6
       jsdom: ^21.1.0
+      markdownlint: ^0.26.0
       rollup-plugin-styles: ^4.0.0
       standard-version: ^9.5.0
       vitest: ^0.28.5
@@ -112,6 +113,7 @@ importers:
       '@vitest/ui': 0.28.4
       happy-dom: 8.2.6
       jsdom: 21.1.0
+      markdownlint: 0.26.0
       rollup-plugin-styles: 4.0.0
       standard-version: 9.5.0
       vitest: 0.28.5_v4lotdpukrmdrbtqcjdczsn3fu
@@ -3564,6 +3566,10 @@ packages:
       sprintf-js: 1.0.3
     dev: true
 
+  /argparse/2.0.1:
+    resolution: {integrity: sha1-JG9Q88p4oyQPbJl+ipvR6sSeSzg=, tarball: argparse/download/argparse-2.0.1.tgz}
+    dev: true
+
   /argv/0.0.2:
     resolution: {integrity: sha1-7L0W+JSbFXGDcRsb2jNPN4QBhas=, tarball: argv/download/argv-0.0.2.tgz}
     engines: {node: '>=0.6.10'}
@@ -5211,6 +5217,11 @@ packages:
 
   /entities/2.2.0:
     resolution: {integrity: sha1-CY3JDruD2N/6CJ1VJWs1HTTE2lU=, tarball: entities/download/entities-2.2.0.tgz}
+    dev: true
+
+  /entities/3.0.1:
+    resolution: {integrity: sha1-K4h8piWF6W2zkDSC0zbBAGwwAdQ=, tarball: entities/download/entities-3.0.1.tgz}
+    engines: {node: '>=0.12'}
     dev: true
 
   /entities/4.4.0:
@@ -7973,6 +7984,12 @@ packages:
     resolution: {integrity: sha1-7KKE910pZQeTCdwK2SVauy68FjI=, tarball: lines-and-columns/download/lines-and-columns-1.2.4.tgz}
     dev: true
 
+  /linkify-it/4.0.1:
+    resolution: {integrity: sha1-AfHV5QgZDQZmmYK6MafZ9WpXUew=, tarball: linkify-it/download/linkify-it-4.0.1.tgz}
+    dependencies:
+      uc.micro: 1.0.6
+    dev: true
+
   /load-json-file/4.0.0:
     resolution: {integrity: sha1-L19Fq5HjMhYjT9U62rZo607AmTs=, tarball: load-json-file/download/load-json-file-4.0.0.tgz}
     engines: {node: '>=4'}
@@ -8255,8 +8272,30 @@ packages:
       object-visit: 1.0.1
     dev: true
 
+  /markdown-it/13.0.1:
+    resolution: {integrity: sha1-xuzEMcrPGl2lMUI/xqQoB4FK9DA=, tarball: markdown-it/download/markdown-it-13.0.1.tgz}
+    hasBin: true
+    dependencies:
+      argparse: 2.0.1
+      entities: 3.0.1
+      linkify-it: 4.0.1
+      mdurl: 1.0.1
+      uc.micro: 1.0.6
+    dev: true
+
+  /markdownlint/0.26.0:
+    resolution: {integrity: sha1-HoAOzHCe1AYcGKsD8cuiP1hRFCE=, tarball: markdownlint/download/markdownlint-0.26.0.tgz}
+    engines: {node: '>=14'}
+    dependencies:
+      markdown-it: 13.0.1
+    dev: true
+
   /mdn-data/2.0.14:
     resolution: {integrity: sha1-cRP8QoGRfWPOKbQ0RvcB5owlulA=, tarball: mdn-data/download/mdn-data-2.0.14.tgz}
+    dev: true
+
+  /mdurl/1.0.1:
+    resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=, tarball: mdurl/download/mdurl-1.0.1.tgz}
     dev: true
 
   /meow/8.1.2:
@@ -11506,6 +11545,10 @@ packages:
     resolution: {integrity: sha1-CVl5+bzA0J2jJNWNA86Pg3TL5lo=, tarball: typescript/download/typescript-4.9.5.tgz}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: true
+
+  /uc.micro/1.0.6:
+    resolution: {integrity: sha1-nEEagCpAmpH8bPdAgbq6NLJEmaw=, tarball: uc.micro/download/uc.micro-1.0.6.tgz}
     dev: true
 
   /ufo/1.1.0:
