@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react'
 
 export type Step = {
   icon: ReactNode
@@ -6,13 +6,17 @@ export type Step = {
 }
 
 export interface TheReadTimeProps {
+  /**
+   * @default [{icon:"🍣",minutes:1},{icon:"🍔",minutes:5},{icon:"🍱",minutes:15}]
+   */
   steps?: Step[]
   /**
    * How many words read per minute
+   * @default 200
    */
   speed?: number
   /**
-   * in minute
+   * total time in minute
    */
   time?: number
   displayRender?: (emoji: ReactNode[], totalTime: number) => ReactNode

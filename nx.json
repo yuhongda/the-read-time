@@ -15,7 +15,6 @@
           "dts",
           "clear",
           "test",
-          "jest:clear",
           "cover",
           "make-badges",
           "ci",

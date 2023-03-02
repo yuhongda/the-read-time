@@ -1,5 +1,4 @@
 import React from 'react'
-import s from './style.module.scss'
 import type { TheReadTimeProps } from './types'
 import wordCount from './wordCount'
 import extractTextFromReactNode from './extractTextFromReactNode'
@@ -12,18 +11,18 @@ export const TheReadTime: React.FC<TheReadTimeProps> = (props) => {
 
   const text = extractTextFromReactNode(props.children)
   const count = wordCount(text)
-  const totalTime = count / speed
+  const totalTime = time || count / speed
   const totalTimeString = convertNumberToTime(totalTime)
   const processSteps = steps.sort((a, b) => b.minutes - a.minutes)
-  const emoji = convertTimeToEmoji(processSteps, time || totalTime)
+  const emoji = convertTimeToEmoji(processSteps, totalTime)
 
   return (
-    <div className={s.container}>
+    <div>
       {displayRender ? (
         displayRender(emoji, totalTime)
       ) : (
         <div>
-          {emoji}
+          {emoji.flat().join('')}
           {totalTimeString}
         </div>
       )}
