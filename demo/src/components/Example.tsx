@@ -1,18 +1,12 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import { TheReadTime } from '../../../packages/the-read-time/src'
-
-const Container = styled.div`
-  width: 100%;
-  height: 500px;
-`
 
 export const Example: React.FC = () => {
   const [count, setCount] = useState(0)
 
   return (
-    <Container>
-      <TheReadTime speed={6}>
+    <div>
+      <TheReadTime speed={10}>
         <p>
           Many resources indicate that the average reading speed of most adults is around 200 to 250
           words per minute, which translates to two minutes per page. College students, probably
@@ -27,6 +21,6 @@ export const Example: React.FC = () => {
         <div>{count}</div>
         <button onClick={() => setCount(count + 1)}>+1</button>
       </TheReadTime>
-    </Container>
+    </div>
   )
 }

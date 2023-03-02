@@ -22,12 +22,13 @@ const extractTextFromReactNode = (node: ReactNode): string => {
     return node.map((n) => extractTextFromReactNode(n)).join('')
   }
 
-  if (
-    React.isValidElement(node) &&
-    node.hasOwnProperty('props') &&
-    node.props.hasOwnProperty('children')
-  ) {
-    return extractTextFromReactNode(node.props.children)
+  if (React.isValidElement(node) && node.hasOwnProperty('props')) {
+    if (node.props.hasOwnProperty('children')) {
+      return extractTextFromReactNode(node.props.children)
+    }
+    if (node.props.hasOwnProperty('dangerouslySetInnerHTML')) {
+      return extractTextFromReactNode(node.props.dangerouslySetInnerHTML.__html)
+    }
   }
 
   return ''
