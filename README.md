@@ -1,4 +1,4 @@
-# 📦 the-read-time
+# the-read-time 🍱🍔🍣
 >
 > Show the read time in Emoji
 
@@ -8,8 +8,8 @@
 ## 🎨 Features
 
 - Show the read time in Emoji automatically. like `🍱🍔🍣21'10"`
-- Support reading speed setting.
-- You can choose your Emoji.
+- Support reading speed changing.
+- You can change the default Emoji.
 - Make your own custom display.
 
-
+##
