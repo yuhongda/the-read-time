@@ -11,8 +11,8 @@
     "lib/",
     "types/",
     "index.d.ts",
-    "/LICENSE",
-    "/README.md"
+    "../../LICENSE",
+    "../../README.md"
   ],
   "license": "MIT",
   "scripts": {
