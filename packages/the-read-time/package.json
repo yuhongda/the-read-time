@@ -1,7 +1,7 @@
 {
   "name": "the-read-time",
   "version": "0.0.1",
-  "description": "",
+  "description": "Show the read time in Emoji",
   "main": "lib/index.js",
   "module": "lib/es/index.es.js",
   "unpkg": "lib/umd/index.min.js",
@@ -17,7 +17,7 @@
   "license": "MIT",
   "scripts": {
     "cp": "copyfiles -u 1 \"./src/**/*.scss\" lib",
-    "lib": "babel src --out-dir lib --extensions \".js,.jsx,.ts,.tsx\" --config-file \"../../.babelrc.js\"",
+    "lib": "babel src --out-dir lib --ignore \"src/**/*.test.tsx\",\"src/**/*.test.ts\" --extensions \".js,.jsx,.ts,.tsx\" --config-file \"../../.babelrc.js\"",
     "cjs": "FORMAT=cjs rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2",
     "esm": "FORMAT=es rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2 && yarn run cp",
     "umd": "NODE_ENV=development FORMAT=umd rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2",
@@ -25,9 +25,9 @@
     "dts": "FORMAT=dts rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2",
     "build": "yarn run clear && yarn run lib && yarn run dts && yarn run cjs && yarn run esm && yarn run umd && yarn run min",
     "clear": "rm -rf lib/ && rm -rf types/",
-    "test": "jest",
-    "jest:clear": "jest --clearCache",
-    "cover": "yarn run jest:clear && jest --coverage --config=jest.config.ts",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "cover": "vitest run --coverage",
     "make-badges": "istanbul-badges-readme --coverageDir=__test__/coverage",
     "ci": "yarn run build && yarn run cover && codecov",
     "release": "npm publish",
@@ -37,13 +37,20 @@
     "release:major": "standard-version --release-as major",
     "prerelease": "standard-version -- --prerelease alpha"
   },
-  "dependencies": {
+  "devDependencies": {
+    "@types/node": "^18.14.3",
+    "@types/react": "^18.0.17",
+    "@vitest/coverage-c8": "^0.28.4",
+    "@vitest/ui": "^0.28.4",
+    "happy-dom": "^8.2.6",
+    "jsdom": "^21.1.0",
+    "markdownlint": "^0.26.0",
+    "rollup-plugin-styles": "^4.0.0",
+    "standard-version": "^9.5.0",
+    "vitest": "^0.28.5"
+  },
+  "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.17",
-    "rollup-plugin-styles": "^4.0.0",
-    "standard-version": "^9.5.0"
   }
 }

@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import { TheReadTime } from '../../../packages/the-read-time/src'
+import React from 'react'
+import { describe, it, expect } from 'vitest'
+import extractTextFromReactNode from './extractTextFromReactNode'
+import wordCount from './wordCount'
 
-export const Example: React.FC = () => {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div>
-      <TheReadTime speed={10}>
+describe('wordCount()', () => {
+  it('wordCount works fine', async () => {
+    const text = extractTextFromReactNode(
+      <>
         <p>
           Many resources indicate that the average reading speed of most adults is around 200 to 250
           words per minute, which translates to two minutes per page. College students, probably
@@ -18,9 +18,9 @@ export const Example: React.FC = () => {
           affecting one’s reading speed and comprehension, and ways to improve reading speed.
         </p>
         The Article <strong>blablabla...</strong> ha-ha!! 哈哈哈
-        <div>{count}</div>
-        <button onClick={() => setCount(count + 1)}>+1</button>
-      </TheReadTime>
-    </div>
-  )
-}
+      </>
+    )
+    const count = wordCount(text)
+    expect(count).toEqual(125)
+  })
+})

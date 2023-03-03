@@ -6,8 +6,6 @@ import { Divider, Typography, Row, Col } from 'antd'
 const { Title } = Typography
 import { Example } from './components/Example'
 
-type ResultDataType<T> = T[]
-
 const Wrapper = styled.div`
   padding: 20px;
 `
