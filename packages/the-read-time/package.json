@@ -17,7 +17,7 @@
   "license": "MIT",
   "scripts": {
     "cp": "copyfiles -u 1 \"./src/**/*.scss\" lib",
-    "lib": "babel src --out-dir lib --extensions \".js,.jsx,.ts,.tsx\" --config-file \"../../.babelrc.js\"",
+    "lib": "babel src --out-dir lib --ignore \"src/**/*.test.tsx\",\"src/**/*.test.ts\" --extensions \".js,.jsx,.ts,.tsx\" --config-file \"../../.babelrc.js\"",
     "cjs": "FORMAT=cjs rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2",
     "esm": "FORMAT=es rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2 && yarn run cp",
     "umd": "NODE_ENV=development FORMAT=umd rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2",

@@ -3,6 +3,6 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   test: {
     reporters: ['default', 'html'],
-    environment: 'happy-dom'
+    environment: 'happy-dom',
   }
 })

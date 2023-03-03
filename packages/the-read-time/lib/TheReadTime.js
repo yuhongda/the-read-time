@@ -18,9 +18,14 @@ var TheReadTime = function TheReadTime(props) {
     speed = _props$speed === void 0 ? _misc.DEFAULT_READ_SPEED : _props$speed,
     time = props.time,
     displayRender = props.displayRender;
-  var text = (0, _extractTextFromReactNode["default"])(props.children);
-  var count = (0, _wordCount["default"])(text);
-  var totalTime = time || count / speed;
+  var totalTime;
+  if (time) {
+    totalTime = time;
+  } else {
+    var text = (0, _extractTextFromReactNode["default"])(props.children);
+    var count = (0, _wordCount["default"])(text);
+    totalTime = count / speed;
+  }
   var totalTimeString = (0, _convertNumberToTime["default"])(totalTime);
   var processSteps = steps.sort(function (a, b) {
     return b.minutes - a.minutes;

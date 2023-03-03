@@ -26,7 +26,10 @@ const extractTextFromReactNode = (node: ReactNode): string => {
     if (node.props.hasOwnProperty('children')) {
       return extractTextFromReactNode(node.props.children)
     }
-    if (node.props.hasOwnProperty('dangerouslySetInnerHTML')) {
+    if (
+      node.props.hasOwnProperty('dangerouslySetInnerHTML') &&
+      node.props.dangerouslySetInnerHTML.hasOwnProperty('__html')
+    ) {
       return extractTextFromReactNode(node.props.dangerouslySetInnerHTML.__html)
     }
   }

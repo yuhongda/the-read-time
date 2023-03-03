@@ -24,8 +24,13 @@ var extractTextFromReactNode = function extractTextFromReactNode(node) {
       return extractTextFromReactNode(n);
     }).join('');
   }
-  if ( /*#__PURE__*/_react["default"].isValidElement(node) && node.hasOwnProperty('props') && node.props.hasOwnProperty('children')) {
-    return extractTextFromReactNode(node.props.children);
+  if ( /*#__PURE__*/_react["default"].isValidElement(node) && node.hasOwnProperty('props')) {
+    if (node.props.hasOwnProperty('children')) {
+      return extractTextFromReactNode(node.props.children);
+    }
+    if (node.props.hasOwnProperty('dangerouslySetInnerHTML') && node.props.dangerouslySetInnerHTML.hasOwnProperty('__html')) {
+      return extractTextFromReactNode(node.props.dangerouslySetInnerHTML.__html);
+    }
   }
   return '';
 };

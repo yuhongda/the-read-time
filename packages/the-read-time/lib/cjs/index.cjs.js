@@ -30,8 +30,13 @@ const extractTextFromReactNode = (node) => {
   if (Array.isArray(node)) {
     return node.map((n) => extractTextFromReactNode(n)).join("");
   }
-  if (React__default["default"].isValidElement(node) && node.hasOwnProperty("props") && node.props.hasOwnProperty("children")) {
-    return extractTextFromReactNode(node.props.children);
+  if (React__default["default"].isValidElement(node) && node.hasOwnProperty("props")) {
+    if (node.props.hasOwnProperty("children")) {
+      return extractTextFromReactNode(node.props.children);
+    }
+    if (node.props.hasOwnProperty("dangerouslySetInnerHTML") && node.props.dangerouslySetInnerHTML.hasOwnProperty("__html")) {
+      return extractTextFromReactNode(node.props.dangerouslySetInnerHTML.__html);
+    }
   }
   return "";
 };
@@ -68,9 +73,14 @@ const convertNumberToTime = (minute) => {
 
 const TheReadTime = (props) => {
   const { steps = DEFAULT_STEPS, speed = DEFAULT_READ_SPEED, time, displayRender } = props;
-  const text = extractTextFromReactNode(props.children);
-  const count = wordCount(text);
-  const totalTime = time || count / speed;
+  let totalTime;
+  if (time) {
+    totalTime = time;
+  } else {
+    const text = extractTextFromReactNode(props.children);
+    const count = wordCount(text);
+    totalTime = count / speed;
+  }
   const totalTimeString = convertNumberToTime(totalTime);
   const processSteps = steps.sort((a, b) => b.minutes - a.minutes);
   const emoji = convertTimeToEmoji(processSteps, totalTime);

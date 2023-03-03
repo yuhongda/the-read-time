@@ -9,9 +9,14 @@ import convertNumberToTime from './convertNumberToTime'
 export const TheReadTime: React.FC<TheReadTimeProps> = (props) => {
   const { steps = DEFAULT_STEPS, speed = DEFAULT_READ_SPEED, time, displayRender } = props
 
-  const text = extractTextFromReactNode(props.children)
-  const count = wordCount(text)
-  const totalTime = time || count / speed
+  let totalTime
+  if (time) {
+    totalTime = time
+  } else {
+    const text = extractTextFromReactNode(props.children)
+    const count = wordCount(text)
+    totalTime = count / speed
+  }
   const totalTimeString = convertNumberToTime(totalTime)
   const processSteps = steps.sort((a, b) => b.minutes - a.minutes)
   const emoji = convertTimeToEmoji(processSteps, totalTime)

@@ -1,4 +1,4 @@
-# 📦 the-read-time
+# the-read-time 🍱🍔🍣
 
 > Show the read time in emoji
 
