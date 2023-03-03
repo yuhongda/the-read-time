@@ -7,7 +7,7 @@ import convertTimeToEmoji from './convertTimeToEmoji'
 import convertNumberToTime from './convertNumberToTime'
 
 export const TheReadTime: React.FC<TheReadTimeProps> = (props) => {
-  const { steps = DEFAULT_STEPS, speed = DEFAULT_READ_SPEED, time, displayRender } = props
+  const { steps = DEFAULT_STEPS, speed = DEFAULT_READ_SPEED, time, displayRender, ...rest } = props
 
   let totalTime
   if (time) {
@@ -22,7 +22,7 @@ export const TheReadTime: React.FC<TheReadTimeProps> = (props) => {
   const emoji = convertTimeToEmoji(processSteps, totalTime)
 
   return (
-    <div>
+    <div {...rest}>
       {displayRender ? (
         displayRender(emoji, totalTime)
       ) : (

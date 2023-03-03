@@ -1,5 +1,5 @@
-import * as React from 'react';
-import React__default, { ReactNode } from 'react';
+import * as react from 'react';
+import react__default, { ReactNode } from 'react';
 
 type Step = {
     icon: ReactNode;
@@ -23,10 +23,22 @@ interface TheReadTimeProps {
     children?: ReactNode;
 }
 
-declare const TheReadTime: React__default.FC<TheReadTimeProps>;
+declare const TheReadTime: react__default.FC<TheReadTimeProps>;
+
+declare const wordCount: (text: string) => number;
+
+declare const extractTextFromReactNode: (node: ReactNode) => string;
+
+declare const convertTimeToEmoji: (steps: Step[], totalTime: number) => ReactNode[];
+
+declare const convertNumberToTime: (minute: number) => string;
 
 declare const _default: {
-    TheReadTime: React.FC<TheReadTimeProps>;
+    TheReadTime: react.FC<TheReadTimeProps>;
+    wordCount: (text: string) => number;
+    extractTextFromReactNode: (node: react.ReactNode) => string;
+    convertTimeToEmoji: (steps: Step[], totalTime: number) => react.ReactNode[];
+    convertNumberToTime: (minute: number) => string;
 };
 
-export { Step, TheReadTime, TheReadTimeProps, _default as default };
+export { Step, TheReadTime, TheReadTimeProps, convertNumberToTime, convertTimeToEmoji, _default as default, extractTextFromReactNode, wordCount };

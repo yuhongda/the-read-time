@@ -1,5 +1,5 @@
 {
-  "name": "the-read-time",
+  "name": "@silverage/the-read-time",
   "version": "0.0.1",
   "description": "Show the read time in Emoji",
   "main": "lib/index.js",
@@ -14,6 +14,8 @@
     "LICENSE",
     "README.md"
   ],
+  "repository": "https://github.com/yuhongda/the-read-time.git",
+  "author": "yuhongda <silverage.y@gmail.com>",
   "license": "MIT",
   "scripts": {
     "cp": "copyfiles -u 1 \"./src/**/*.scss\" lib",

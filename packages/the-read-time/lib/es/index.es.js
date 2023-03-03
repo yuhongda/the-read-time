@@ -63,8 +63,36 @@ const convertNumberToTime = (minute) => {
   return `${hour ? `${hour}h` : ""}${minutes ? `${minutes}'` : ""}${seconds ? `${seconds}"` : ""}`;
 };
 
+var __defProp = Object.defineProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
 const TheReadTime = (props) => {
-  const { steps = DEFAULT_STEPS, speed = DEFAULT_READ_SPEED, time, displayRender } = props;
+  const _a = props, { steps = DEFAULT_STEPS, speed = DEFAULT_READ_SPEED, time, displayRender } = _a, rest = __objRest(_a, ["steps", "speed", "time", "displayRender"]);
   let totalTime;
   if (time) {
     totalTime = time;
@@ -76,9 +104,15 @@ const TheReadTime = (props) => {
   const totalTimeString = convertNumberToTime(totalTime);
   const processSteps = steps.sort((a, b) => b.minutes - a.minutes);
   const emoji = convertTimeToEmoji(processSteps, totalTime);
-  return /* @__PURE__ */ React.createElement("div", null, displayRender ? displayRender(emoji, totalTime) : /* @__PURE__ */ React.createElement("div", null, emoji.flat().join(""), totalTimeString), props.children);
+  return /* @__PURE__ */ React.createElement("div", __spreadValues({}, rest), displayRender ? displayRender(emoji, totalTime) : /* @__PURE__ */ React.createElement("div", null, emoji.flat().join(""), totalTimeString), props.children);
 };
 
-var index = { TheReadTime };
+var index = {
+  TheReadTime,
+  wordCount,
+  extractTextFromReactNode,
+  convertTimeToEmoji,
+  convertNumberToTime
+};
 
-export { TheReadTime, index as default };
+export { TheReadTime, convertNumberToTime, convertTimeToEmoji, index as default, extractTextFromReactNode, wordCount };

@@ -14,13 +14,13 @@
 ## Installation
 
 ```bash
-pnpm add the-read-time
+pnpm add @silverage/the-read-time
 ```
 
 ## Usage
 
 ```jsx
-import { TheReadTime } from 'the-read-time'
+import { TheReadTime } from '@silverage/the-read-time'
 
 <TheReadTime>
   {/* your article */}
