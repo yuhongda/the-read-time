@@ -27,7 +27,7 @@ import { TheReadTime } from '@silverage/the-read-time'
 </TheReadTime>
 ```
 
-🪄 Boom! The read time will show top the article
+🪄 Boom! The read time will show top of the article
 
 ![image](https://user-images.githubusercontent.com/259410/222621402-79d885a4-2dd9-4403-a316-bd4464e39b7b.png)
 
