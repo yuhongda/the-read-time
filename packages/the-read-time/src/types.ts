@@ -7,7 +7,7 @@ export type Step = {
 
 export interface TheReadTimeProps {
   /**
-   * @default [{icon:"🍣",minutes:1},{icon:"🍔",minutes:5},{icon:"🍱",minutes:15}]
+   * @default [{icon:"🍱",minutes:15},{icon:"🍔",minutes:5},{icon:"🍣",minutes:1}]
    */
   steps?: Step[]
   /**

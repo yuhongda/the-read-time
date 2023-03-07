@@ -6,7 +6,13 @@ export const Example: React.FC = () => {
 
   return (
     <div>
-      <TheReadTime speed={10}>
+      <TheReadTime
+        steps={[
+          { icon: '🍣', minutes: 1 },
+          { icon: '🍔', minutes: 5 },
+          { icon: '🍱', minutes: 15 }
+        ]}
+      >
         <p>
           Many resources indicate that the average reading speed of most adults is around 200 to 250
           words per minute, which translates to two minutes per page. College students, probably

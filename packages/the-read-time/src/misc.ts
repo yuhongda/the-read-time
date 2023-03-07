@@ -1,17 +1,17 @@
-import type { Step } from "./types"
+import type { Step } from './types'
 
 export const DEFAULT_STEPS: Step[] = [
   {
-    icon: '🍣',
-    minutes: 1
+    icon: '🍱',
+    minutes: 15
   },
   {
     icon: '🍔',
     minutes: 5
   },
   {
-    icon: '🍱',
-    minutes: 15
+    icon: '🍣',
+    minutes: 1
   }
 ]
 
