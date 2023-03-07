@@ -25,7 +25,9 @@ export const Example: React.FC = () => {
         </p>
         The Article <strong>blablabla...</strong> ha-ha!! 哈哈哈
         <div>{count}</div>
-        <button onClick={() => setCount(count + 1)}>+1</button>
+        <button type="button" onClick={() => setCount(count + 1)}>
+          +1
+        </button>
       </TheReadTime>
     </div>
   )

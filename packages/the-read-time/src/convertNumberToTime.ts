@@ -3,8 +3,8 @@ const convertNumberToTime = (minute: number): string => {
     .toISOString()
     .substring(11, 11 + 8)
     .split(':')
-    .map(item => Number(item))
-  
+    .map((item) => Number(item))
+
   return `${hour ? `${hour}h` : ''}${minutes ? `${minutes}'` : ''}${seconds ? `${seconds}"` : ''}`
 }
 

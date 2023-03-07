@@ -8,7 +8,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const requireIndex = require('requireindex')
+// const requireIndex = require('requireindex')
 
 //------------------------------------------------------------------------------
 // Plugin Definition
@@ -17,6 +17,6 @@ const requireIndex = require('requireindex')
 // import all rules in lib/rules
 module.exports = {
   rules: {
-    steps: requireIndex(__dirname + '/rules/steps.js')
+    steps: require('./rules/steps.js')
   }
 }

@@ -31,7 +31,6 @@ module.exports = {
   create(context) {
     return {
       JSXElement: (node) => {
-				console.log(node)
         if (node.openingElement.name.name === 'TheReadTime') {
           const stepsProp = node.openingElement.attributes.find(
             (item) => item.name.name === 'steps'

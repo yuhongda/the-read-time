@@ -35,4 +35,4 @@ export const TheReadTime: React.FC<TheReadTimeProps> = (props) => {
     </div>
   )
 }
-export { TheReadTime as default }
+export default TheReadTime
