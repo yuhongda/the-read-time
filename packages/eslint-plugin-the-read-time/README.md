@@ -1,6 +1,6 @@
 # eslint-plugin-the-read-time
 
-eslint plugin for @silverage/the-read-time
+eslint plugin for [@silverage/the-read-time](https://github.com/yuhongda/the-read-time)
 
 ## Installation
 
@@ -28,19 +28,16 @@ Add `the-read-time` to the plugins section of your `.eslintrc` configuration fil
 }
 ```
 
-
 Then configure the rules you want to use under the rules section.
 
 ```json
 {
     "rules": {
-        "the-read-time/rule-name": 2
+        "the-read-time/steps": 1
     }
 }
 ```
 
 ## Supported Rules
 
-* Fill in provided rules here
-
-
+* `the-read-time/steps`
