@@ -1,6 +1,7 @@
+/* eslint-disable no-useless-escape */
+/* eslint-disable import/no-extraneous-dependencies */
 import { describe, it, expect, afterEach } from 'vitest'
 import { render, screen, cleanup } from '@testing-library/react'
-import { renderHook, act } from '@testing-library/react-hooks'
 import React from 'react'
 import TheReadTime from './TheReadTime'
 

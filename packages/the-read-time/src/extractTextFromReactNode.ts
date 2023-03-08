@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import type { ReactNode } from 'react'
 import React from 'react'
 
@@ -19,16 +20,16 @@ const extractTextFromReactNode = (node: ReactNode): string => {
   }
 
   if (Array.isArray(node)) {
-    return node.map((n) => extractTextFromReactNode(n)).join('')
+    return node.map(n => extractTextFromReactNode(n)).join('')
   }
 
-  if (React.isValidElement(node) && node.hasOwnProperty('props')) {
-    if (node.props.hasOwnProperty('children')) {
+  if (React.isValidElement(node) && Object.prototype.hasOwnProperty.call(node, 'props')) {
+    if (Object.prototype.hasOwnProperty.call(node.props, 'children')) {
       return extractTextFromReactNode(node.props.children)
     }
     if (
-      node.props.hasOwnProperty('dangerouslySetInnerHTML') &&
-      node.props.dangerouslySetInnerHTML.hasOwnProperty('__html')
+      Object.prototype.hasOwnProperty.call(node.props, 'dangerouslySetInnerHTML') &&
+      Object.prototype.hasOwnProperty.call(node.props.dangerouslySetInnerHTML, '__html')
     ) {
       return extractTextFromReactNode(node.props.dangerouslySetInnerHTML.__html)
     }
