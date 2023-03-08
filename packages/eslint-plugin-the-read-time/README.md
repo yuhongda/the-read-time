@@ -33,7 +33,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "the-read-time/steps": 2
+        "the-read-time/steps": 1
     }
 }
 ```
