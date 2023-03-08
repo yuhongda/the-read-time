@@ -22,7 +22,7 @@ module.exports = {
       description: '`steps` needs to be descending order by minutes',
       category: 'Fill me in',
       recommended: false,
-      url: `https://github.com/yuhongda/eslint-plugin-the-read-time/tree/master/docs/rules/steps.md` // URL to the documentation page for this rule
+      url: `https://github.com/yuhongda/eslint-plugin-the-read-time/tree/main/docs/rules/steps.md` // URL to the documentation page for this rule
     },
     fixable: null, // Or `code` or `whitespace`
     schema: [] // Add a schema if the rule has options
