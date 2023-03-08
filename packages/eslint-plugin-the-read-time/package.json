@@ -9,6 +9,11 @@
   ],
   "author": "yuhongda",
   "main": "lib/index.js",
+  "files": [
+    "docs/",
+    "lib/",
+    "README.md"
+  ],
   "scripts": {
     "lint": "eslint .",
     "test": "mocha tests --recursive"
